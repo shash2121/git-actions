@@ -6,6 +6,10 @@ jobs:
     steps:
       - name: code checkout
         uses: actions/checkout@v4
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20  
       - name: install dependencies
         run: npm ci
       - name: lint

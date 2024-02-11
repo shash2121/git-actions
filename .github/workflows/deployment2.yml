@@ -1,7 +1,15 @@
 name: Deployment Exercise 2
 on: push
 jobs:
+  setup-node:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
   lint:
+    needs: setup-node
     runs-on: ubuntu-latest
     steps: 
       - name: Get code
